@@ -28,6 +28,11 @@ If not, then whose view differs from whom??
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
+Data comes from the GSS university of Chicago, 2016 survey  
+$H_0$: There is no difference in attitude toward capitol punishment and independent races.  
+$H_A$: There is a difference in attitude toward captiol punishment and independent races.   
+cappun~race  Cat~Cat
+
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
@@ -38,7 +43,13 @@ If not, then whose view differs from whom??
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
+```{r}
+barchartGC(~race + cappun,data=mydata)
+barchartGC(~race + cappun,data=mydata, type="percent")
 
+```
+
+These results show that white people favor capitol punishment more than oppose of it. Black people are shown to be opposing of it rathar than favoring it. And others seem to be favoring captiol punishment rather than opposing.
 
 ## Now with The Most data (fewer variables gives more data points)
 
@@ -48,9 +59,13 @@ If not, then whose view differs from whom??
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+table1 <- xtabs(~race + cappun, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
 
-
-
+Referring to this numerical data, we are shown that capitol punishment is favored in 65.10 percent of white people, 42.63 percent of black people, and 55.20 percent in others. Looking at the statistics of those opposed, 34.90 percent of white people, 57.37 percent of black people, and 44.80 percent of others show that they are opposing of capitol punishment. 
 ## Now with More data
 
 
@@ -59,10 +74,16 @@ If not, then whose view differs from whom??
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
-`
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
+With the knowledge that the P-Value is 2.2e-16, which is lower than 0.05, we can conclude that there is a difference in attitude between capitol punishment and independent races, therefore we must reject the null hypothesis.
 
 ## More data version
+
 
 
 # Discussion and Conclusion
