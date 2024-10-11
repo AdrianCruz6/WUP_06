@@ -51,8 +51,6 @@ barchartGC(~race + cappun,data=mydata, type="percent")
 
 These results show that white people favor capitol punishment more than oppose of it. Black people are shown to be opposing of it rathar than favoring it. And others seem to be favoring captiol punishment rather than opposing.
 
-## Now with The Most data (fewer variables gives more data points)
-
 
 
 ### Numerical Descriptive Results
@@ -66,7 +64,7 @@ colPerc(table1)
 ```
 
 Referring to this numerical data, we are shown that capitol punishment is favored in 65.10 percent of white people, 42.63 percent of black people, and 55.20 percent in others. Looking at the statistics of those opposed, 34.90 percent of white people, 57.37 percent of black people, and 44.80 percent of others show that they are opposing of capitol punishment. 
-## Now with More data
+
 
 
 
@@ -82,10 +80,9 @@ fisher.test(table1)
 
 With the knowledge that the P-Value is 2.2e-16, which is lower than 0.05, we can conclude that there is a difference in attitude between capitol punishment and independent races, therefore we must reject the null hypothesis.
 
-## More data version
-
 
 
 # Discussion and Conclusion
-
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+The question we are answering in this assignment is if attiutude towards capital punishment and independent races are related. We conducted a bar graph to analyze black, whites, and others to see if there is a difference between those who favored capital punishment and those who appose of it. From this graph, we see there is a difference, thus we must look at the numerical data to analyze if theres a difference in numbers. We see that capitol punishment is favored in 65.10 percent of white people, 42.63 percent of black people, and 55.20 percent in others. 34.90 percent of white people, 57.37 percent of black people, and 44.80 percent of others show that they are opposing of capitol punishment. Meaning there is a difference in attitudes. To solidify and confirm there is a difference we viewed the P value which was drasitically lower than 0.05 (2.2e-16), therefore confirming that there is a difference in attiude towards capitol punishment depending on race.
